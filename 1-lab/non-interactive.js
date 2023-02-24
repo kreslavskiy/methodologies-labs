@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-const fileContent = fs.readFileSync('equation.json', 'utf-8');
+const fileContent = fs.readFileSync('numbers.json', 'utf-8');
 const { a, b, c } = JSON.parse(fileContent);
 
 (() => {
