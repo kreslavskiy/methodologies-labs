@@ -1,12 +1,14 @@
 'use strict';
 
-const fs = require('fs');
+const getNumbersFromConsole = require('./src/getNumbersFromConsole');
+const getNumbersFromFile = require('./src/getNumbersFromFile');
+const validator = require('./src/validator');
 
-const fileContent = fs.readFileSync('numbers.json', 'utf-8');
-const { a, b, c } = JSON.parse(fileContent);
+(async () => {
+  const { a, b, c } = process.argv.length === 3 ? getNumbersFromFile(process.argv[3]) : await getNumbersFromConsole();
+  const isValid = validator(a, b, c);
 
-(() => {
-  if (a === 0 || typeof a !== 'number' || typeof b !== 'number' || typeof c !== 'number') console.log('Error. Expected a valid real number, got NaN instead');
+  if (!isValid) console.log('One of number is not valid. Please enter valid numbers');
   else {
     console.log(`Equation is: ${a}x^2 + ${b}x + ${c} = 0`);
     const discriminant = Math.pow(b, 2) - 4 * a * c;
