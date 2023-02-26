@@ -4,8 +4,10 @@ const getNumbersFromConsole = require('./src/getNumbersFromConsole');
 const getNumbersFromFile = require('./src/getNumbersFromFile');
 const validator = require('./src/validator');
 
+const FILENAME_POSITION = 3;
+
 (async () => {
-  const { a, b, c } = process.argv.length === 3 ? getNumbersFromFile(process.argv[3]) : await getNumbersFromConsole();
+  const { a, b, c } = process.argv.length === FILENAME_POSITION ? getNumbersFromFile(process.argv[2]) : await getNumbersFromConsole();
   const isValid = validator(a, b, c);
 
   if (!isValid) console.log('One of number is not valid. Please enter valid numbers');
