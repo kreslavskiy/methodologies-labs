@@ -2,6 +2,7 @@
   "scripts": {
     "build": "tsc --build",
     "clean": "tsc --build --clean",
-    "start": "node ./dist/linkedListNode.js"
-  }
+    "start": "node ./dist/tests/append-test.js"
+  },
+  "type": "module"
 }
