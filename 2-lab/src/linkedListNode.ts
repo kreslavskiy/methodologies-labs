@@ -1,9 +1,7 @@
-class LinkedListNode<T> {
-  public value: T;
-  public next: LinkedListNode<T> | null;
+export default class LinkedListNode {
+  readonly value: any;
 
-  constructor(value: T) {
+  constructor(value: any) {
     this.value = value;
-    this.next = null;
   }
 }
