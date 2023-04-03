@@ -6,9 +6,9 @@ const jsonParser = express.json();
 
 
 app.post('/send', jsonParser, async (req, res) => {
-  console.log(req.body);
+  if (!req.body) return res.sendStatus(400);
   await sendEmail(req.body.from, req.body.address, req.body.subject, req.body.message);
-  res.send('ok');
+  res.sendStatus(200);
 });
 
 app.listen(8080, () => {
