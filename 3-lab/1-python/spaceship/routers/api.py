@@ -29,9 +29,9 @@ def matrix() -> dict:
         result = numpy.dot(first_matrix, second_matrix)
 
         response = {
-            "first_matrix": first_matrix.tolist(),
-            "second_matrix": second_matrix.tolist(),
-            "result": result.tolist()
+            "matrix_a": first_matrix.tolist(),
+            "matrix_b": second_matrix.tolist(),
+            "product": result.tolist()
         }
 
     return response
