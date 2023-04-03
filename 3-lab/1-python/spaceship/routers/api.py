@@ -11,9 +11,9 @@ def hello_world() -> dict:
 @router.get('/matrix')
 def matrix() -> dict:
     first_rows = 10
-    first_columns = 11
+    first_columns = 10
 
-    second_rows = 11
+    second_rows = 10
     second_columns = 10
 
     if first_columns != second_rows:
@@ -33,5 +33,5 @@ def matrix() -> dict:
             "second_matrix": second_matrix.tolist(),
             "result": result.tolist()
         }
-        
+
     return response
